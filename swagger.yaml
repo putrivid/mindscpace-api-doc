@@ -66,7 +66,7 @@ paths:
           schema:
             $ref: "#/definitions/ApiResponse"
       security:
-      - psikonseling_auth:
+      - mindspace_auth:
         - "write:psikologs"
         - "read:psikologs"
   /psikolog:
@@ -93,7 +93,7 @@ paths:
         405:
           description: "Invalid input"
       security:
-      - psikonseling_auth:
+      - mindspace_auth:
         - "write:psikologs"
         - "read:psikologs"
     put:
@@ -123,7 +123,7 @@ paths:
         405:
           description: "Validation exception"
       security:
-      - psikonseling_auth:
+      - mindspace_auth:
         - "write:psikologs"
         - "read:psikologs"
   /psikolog/findByStatus:
@@ -160,7 +160,7 @@ paths:
         400:
           description: "Invalid status value"
       security:
-      - psikonseling_auth:
+      - mindspace_auth:
         - "write:psikologs"
         - "read:psikologs"
   /psikolog/findByTags:
@@ -193,7 +193,7 @@ paths:
         400:
           description: "Invalid tag value"
       security:
-      - psikonseling_auth:
+      - mindspace_auth:
         - "write:psikologs"
         - "read:psikologs"
       deprecated: true
@@ -257,7 +257,7 @@ paths:
         405:
           description: "Invalid input"
       security:
-      - psikonseling_auth:
+      - mindspace_auth:
         - "write:psikologs"
         - "read:psikologs"
     delete:
@@ -286,7 +286,7 @@ paths:
         404:
           description: "psikolog not found"
       security:
-      - psikonseling_auth:
+      - mindspace_auth:
         - "write:psikologs"
         - "read:psikologs"
   /store/order:
@@ -586,9 +586,9 @@ securityDefinitions:
     type: "apiKey"
     name: "api_key"
     in: "header"
-  psikonseling_auth:
+  mindspace_auth:
     type: "oauth2"
-    authorizationUrl: "https://petstore.swagger.io/oauth/authorize"
+    authorizationUrl: "https://mindspace.swagger.io/oauth/authorize"
     flow: "implicit"
     scopes:
       read:psikologs: "read your psikologs"
