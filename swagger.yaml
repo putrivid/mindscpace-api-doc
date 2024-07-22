@@ -16,8 +16,8 @@ info:
 host: "mindspace.swagger.io"
 basePath: "/v2"
 tags:
-- name: "pet"
-  description: "Everything about your Pets"
+- name: "psikolog"
+  description: "Everything about your psikolog"
   externalDocs:
     description: "Find out more"
     url: "http://swagger.io"
@@ -32,10 +32,10 @@ schemes:
 - "https"
 - "http"
 paths:
-  /pet/{petId}/uploadImage:
+  /psikolog/{psikologId}/uploadImage:
     post:
       tags:
-      - "pet"
+      - "psikolog"
       summary: "uploads an image"
       description: ""
       operationId: "uploadFile"
@@ -44,9 +44,9 @@ paths:
       produces:
       - "application/json"
       parameters:
-      - name: "petId"
+      - name: "psikologId"
         in: "path"
-        description: "ID of pet to update"
+        description: "ID of psikolog to update"
         required: true
         type: "integer"
         format: "int64"
@@ -67,15 +67,15 @@ paths:
             $ref: "#/definitions/ApiResponse"
       security:
       - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /pet:
+        - "write:psikologs"
+        - "read:psikologs"
+  /psikolog:
     post:
       tags:
-      - "pet"
-      summary: "Add a new pet to the store"
+      - "psikolog"
+      summary: "Add a new psikolog to the store"
       description: ""
-      operationId: "addPet"
+      operationId: "addPsikolog"
       consumes:
       - "application/json"
       - "application/xml"
@@ -85,7 +85,7 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "Pet object that needs to be added to the store"
+        description: "psikolog object that needs to be added to the store"
         required: true
         schema:
           $ref: "#/definitions/Pet"
@@ -94,14 +94,14 @@ paths:
           description: "Invalid input"
       security:
       - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+        - "write:psikologs"
+        - "read:psikologs"
     put:
       tags:
-      - "pet"
-      summary: "Update an existing pet"
+      - "psikolog"
+      summary: "Update an existing psikolog"
       description: ""
-      operationId: "updatePet"
+      operationId: "updatePsikolog"
       consumes:
       - "application/json"
       - "application/xml"
@@ -111,10 +111,10 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "Pet object that needs to be added to the store"
+        description: "psikolog object that needs to be added to the store"
         required: true
         schema:
-          $ref: "#/definitions/Pet"
+          $ref: "#/definitions/psikolog"
       responses:
         400:
           description: "Invalid ID supplied"
@@ -124,15 +124,15 @@ paths:
           description: "Validation exception"
       security:
       - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /pet/findByStatus:
+        - "write:psikologs"
+        - "read:psikologs"
+  /psikolog/findByStatus:
     get:
       tags:
-      - "pet"
-      summary: "Finds Pets by status"
+      - "psikolog"
+      summary: "Finds psikolog by status"
       description: "Multiple status values can be provided with comma separated strings"
-      operationId: "findPetsByStatus"
+      operationId: "findpsikologByStatus"
       produces:
       - "application/json"
       - "application/xml"
@@ -156,21 +156,21 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Pet"
+              $ref: "#/definitions/psikolog"
         400:
           description: "Invalid status value"
       security:
       - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /pet/findByTags:
+        - "write:psikologs"
+        - "read:psikologs"
+  /psikolog/findByTags:
     get:
       tags:
-      - "pet"
-      summary: "Finds Pets by tags"
+      - "psikolog"
+      summary: "Finds psikolog by tags"
       description: "Multiple tags can be provided with comma separated strings. Use\
         \ tag1, tag2, tag3 for testing."
-      operationId: "findPetsByTags"
+      operationId: "findpsikologByTags"
       produces:
       - "application/json"
       - "application/xml"
@@ -189,26 +189,26 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Pet"
+              $ref: "#/definitions/psikolog"
         400:
           description: "Invalid tag value"
       security:
       - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+        - "write:psikologs"
+        - "read:psikologs"
       deprecated: true
-  /pet/{petId}:
+  /psikolog/{psikologId}:
     get:
       tags:
-      - "pet"
-      summary: "Find pet by ID"
-      description: "Returns a single pet"
-      operationId: "getPetById"
+      - "psikolog"
+      summary: "Find psikolog by ID"
+      description: "Returns a single psikolog"
+      operationId: "getpsikologById"
       produces:
       - "application/json"
       - "application/xml"
       parameters:
-      - name: "petId"
+      - name: "psikologId"
         in: "path"
         description: "ID of pet to return"
         required: true
@@ -218,7 +218,7 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Pet"
+            $ref: "#/definitions/psikolog"
         400:
           description: "Invalid ID supplied"
         404:
@@ -227,17 +227,17 @@ paths:
       - api_key: []
     post:
       tags:
-      - "pet"
-      summary: "Updates a pet in the store with form data"
+      - "psikolog"
+      summary: "Updates a psikolog in the store with form data"
       description: ""
-      operationId: "updatePetWithForm"
+      operationId: "updatepsikologWithForm"
       consumes:
       - "application/x-www-form-urlencoded"
       produces:
       - "application/json"
       - "application/xml"
       parameters:
-      - name: "petId"
+      - name: "psikologId"
         in: "path"
         description: "ID of pet that needs to be updated"
         required: true
@@ -245,12 +245,12 @@ paths:
         format: "int64"
       - name: "name"
         in: "formData"
-        description: "Updated name of the pet"
+        description: "Updated name of the psikolog"
         required: false
         type: "string"
       - name: "status"
         in: "formData"
-        description: "Updated status of the pet"
+        description: "Updated status of the psikolog"
         required: false
         type: "string"
       responses:
@@ -258,14 +258,14 @@ paths:
           description: "Invalid input"
       security:
       - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+        - "write:psikologs"
+        - "read:psikologs"
     delete:
       tags:
-      - "pet"
-      summary: "Deletes a pet"
+      - "psikolog"
+      summary: "Deletes a psikolog"
       description: ""
-      operationId: "deletePet"
+      operationId: "deletePsikolog"
       produces:
       - "application/json"
       - "application/xml"
@@ -274,9 +274,9 @@ paths:
         in: "header"
         required: false
         type: "string"
-      - name: "petId"
+      - name: "psikologId"
         in: "path"
-        description: "Pet id to delete"
+        description: "psikolog id to delete"
         required: true
         type: "integer"
         format: "int64"
@@ -284,16 +284,16 @@ paths:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Pet not found"
+          description: "psikolog not found"
       security:
       - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+        - "write:psikologs"
+        - "read:psikologs"
   /store/order:
     post:
       tags:
       - "store"
-      summary: "Place an order for a pet"
+      summary: "Place an order for a psikolog"
       description: ""
       operationId: "placeOrder"
       consumes:
@@ -304,7 +304,7 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "order placed for purchasing the pet"
+        description: "order placed for purchasing the psikolog"
         required: true
         schema:
           $ref: "#/definitions/Order"
@@ -329,7 +329,7 @@ paths:
       parameters:
       - name: "orderId"
         in: "path"
-        description: "ID of pet that needs to be fetched"
+        description: "ID of psikolog that needs to be fetched"
         required: true
         type: "integer"
         maximum: 10
@@ -371,7 +371,7 @@ paths:
     get:
       tags:
       - "store"
-      summary: "Returns pet inventories by status"
+      summary: "Returns psikolog inventories by status"
       description: "Returns a map of status codes to quantities"
       operationId: "getInventory"
       produces:
