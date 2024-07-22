@@ -21,12 +21,12 @@ tags:
   externalDocs:
     description: "Find out more"
     url: "http://swagger.io"
-- name: "store"
-  description: "Access to psikonseling orders"
+- name: "konseling"
+  description: "Access to mindspace orders"
 - name: "user"
   description: "Operations about user"
   externalDocs:
-    description: "Find out more about our store"
+    description: "Find out more about our konseling"
     url: "http://swagger.io"
 schemes:
 - "https"
@@ -85,7 +85,7 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "psikolog object that needs to be added to the store"
+        description: "psikolog object that needs to be added to the konseling"
         required: true
         schema:
           $ref: "#/definitions/psikolog"
@@ -111,7 +111,7 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "psikolog object that needs to be added to the store"
+        description: "psikolog object that needs to be added to the konseling"
         required: true
         schema:
           $ref: "#/definitions/psikolog"
@@ -228,7 +228,7 @@ paths:
     post:
       tags:
       - "psikolog"
-      summary: "Updates a psikolog in the store with form data"
+      summary: "Updates a psikolog in the konseling with form data"
       description: ""
       operationId: "updatepsikologWithForm"
       consumes:
@@ -289,10 +289,10 @@ paths:
       - mindspace_auth:
         - "write:psikologs"
         - "read:psikologs"
-  /store/order:
+  /konseling/order:
     post:
       tags:
-      - "store"
+      - "konseling"
       summary: "Place an order for a psikolog"
       description: ""
       operationId: "placeOrder"
@@ -315,10 +315,10 @@ paths:
             $ref: "#/definitions/Order"
         400:
           description: "Invalid Order"
-  /store/order/{orderId}:
+  /konseling/order/{orderId}:
     get:
       tags:
-      - "store"
+      - "konseling"
       summary: "Find purchase order by ID"
       description: "For valid response try integer IDs with value >= 1 and <= 10.\
         \ Other values will generated exceptions"
@@ -346,7 +346,7 @@ paths:
           description: "Order not found"
     delete:
       tags:
-      - "store"
+      - "konseling"
       summary: "Delete purchase order by ID"
       description: "For valid response try integer IDs with positive integer value.\
         \ Negative or non-integer values will generate API errors"
@@ -367,10 +367,10 @@ paths:
           description: "Invalid ID supplied"
         404:
           description: "Order not found"
-  /store/inventory:
+  /konseling/inventory:
     get:
       tags:
-      - "store"
+      - "konseling"
       summary: "Returns psikolog inventories by status"
       description: "Returns a map of status codes to quantities"
       operationId: "getInventory"
@@ -646,7 +646,7 @@ definitions:
           $ref: "#/definitions/Tag"
       status:
         type: "string"
-        description: "psikolog status in the store"
+        description: "psikolog status in the konseling"
         enum:
         - "available"
         - "pending"
