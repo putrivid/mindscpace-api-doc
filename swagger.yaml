@@ -73,7 +73,7 @@ paths:
     post:
       tags:
       - "psikolog"
-      summary: "Add a new psikolog to the store"
+      summary: "Add a new psikolog to the konseling"
       description: ""
       operationId: "addPsikolog"
       consumes:
